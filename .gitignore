@@ -8,4 +8,6 @@ chapter5/find-map
 chapter5/hello-buffer-config
 # ignore .env files in every directory
 **/.env
+# ignore libbpf directory
+libbpf/
 

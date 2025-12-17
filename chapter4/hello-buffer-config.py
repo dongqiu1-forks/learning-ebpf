@@ -46,7 +46,7 @@ b = BPF(text=program)
 syscall = b.get_syscall_fnname("execve")
 b.attach_kprobe(event=syscall, fn_name="hello")
 b["config"][ct.c_int(0)] = ct.create_string_buffer(b"Hey root!")
-b["config"][ct.c_int(501)] = ct.create_string_buffer(b"Hi user 501!")
+b["config"][ct.c_int(1000)] = ct.create_string_buffer(b"Hi stack!")
  
 def print_event(cpu, data, size):  
    data = b["output"].event(data)
